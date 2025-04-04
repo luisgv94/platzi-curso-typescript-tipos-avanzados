@@ -1,14 +1,20 @@
 export const createProduct = (
   id: string | number,
   isNew?: boolean,
-  stock?: number,
+  stock?: number
 ) => {
   return {
     id,
     stock: stock ?? 10,
-    isNew: isNew ?? true
-  }
-}
+    isNew: isNew ?? true,
+  };
+};
+
+// const createProduct2 = (id: string | number, isNew: boolean = true, stock: number = 10) => ({id, stock, isNew})
+
+// || evalua valores falsy (https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+// ?? evalua valores nullish (osea null y undefined)
+// && (AND Lógico): Devuelve el primer valor "falsy" o el último valor "truthy". Se usa para validar múltiples condiciones.
 
 // 0 === false
 // '' === false

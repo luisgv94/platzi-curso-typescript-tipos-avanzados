@@ -1,12 +1,16 @@
 import faker from '@faker-js/faker';
 
 import { Product } from './product.model';
-import { CreateProductDto, UpdateProductDto, FindProductDto } from './product.dto';
+import {
+  CreateProductDto,
+  UpdateProductDto,
+  FindProductDto,
+} from './product.dto';
 
 export const products: Product[] = [];
 
 export const addProduct = (data: CreateProductDto): Product => {
-  const newProduct = {
+  const newProduct: Product = {
     ...data,
     id: faker.datatype.uuid(),
     createdAt: faker.date.recent(),
@@ -16,23 +20,24 @@ export const addProduct = (data: CreateProductDto): Product => {
       name: faker.commerce.department(),
       createdAt: faker.date.recent(),
       updatedAt: faker.date.recent(),
-    }
-  }
+    },
+  };
   products.push(newProduct);
   return newProduct;
-}
+};
 
-
-export const updateProduct = (id: Product['id'], changes: UpdateProductDto ): Product => {
-  const index = products.findIndex(item => item.id === id);
+export const updateProduct = (
+  id: Product['id'],
+  changes: UpdateProductDto
+): Product => {
+  const index = products.findIndex((item) => item.id === id);
   const prevData = products[index];
   products[index] = {
     ...prevData,
-    ...changes
-  }
+    ...changes,
+  };
   return products[index];
-}
-
+};
 
 export const findProducts = (dto: FindProductDto): Product[] => {
   // code
@@ -42,4 +47,4 @@ export const findProducts = (dto: FindProductDto): Product[] => {
   // dto.tags?.pop();
   // dto.tags?.push();
   return products;
-}
+};

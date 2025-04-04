@@ -19,7 +19,6 @@ unknowVar = 1;
 unknowVar = [];
 unknowVar = {};
 
-
 // unknowVar.doSomething();
 if (typeof unknowVar === 'string') {
   unknowVar.toUpperCase();
@@ -30,4 +29,4 @@ if (typeof unknowVar === 'boolean') {
 
 const parse = (str: string): unknown => {
   return JSON.parse(str);
-}
+};

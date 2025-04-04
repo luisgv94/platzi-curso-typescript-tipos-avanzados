@@ -1,4 +1,4 @@
-const prices: (number | string)[] = [1,3,2,2,2, 'as'];
+const prices: (number | string)[] = [1, 3, 2, 2, 2, 'as'];
 prices.push(1);
 prices.push('1');
 

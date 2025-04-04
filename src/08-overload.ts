@@ -1,7 +1,7 @@
 // Nico => [N,i,c,o] => string => string[]
 // [N,i,c,o] => Nico => string[] => string
 
-
+// Overload functions only work with functions, not with arrow functions
 function parseStr(input: string | string[]): string | string[] {
   if (Array.isArray(input)) {
     return input.join(''); // string
@@ -15,11 +15,11 @@ const rtaArray = parseStr('Nico');
 if (Array.isArray(rtaArray)) {
   rtaArray.reverse();
 }
-console.log('rtaArray', 'Nico =>' ,rtaArray);
+console.log('rtaArray', 'Nico =>', rtaArray);
 
-const rtaStr = parseStr(['N','i','c','o']);
+const rtaStr = parseStr(['N', 'i', 'c', 'o']);
 // rtaStr.toLowerCase();
 if (typeof rtaStr === 'string') {
   rtaStr.toLowerCase();
 }
-console.log('rtaStr', "['N','i','c','o'] =>",rtaStr);
+console.log('rtaStr', "['N','i','c','o'] =>", rtaStr);
